@@ -3,8 +3,9 @@ const cors = require('cors');
 const app = express();
 const fightersRoutes = require('./fighters');
 
-app.use(cors());
-app.use(express.json());
+// Ordem dos middlewares
+app.use(cors());  // CORS deve vir antes das rotas
+app.use(express.json());  // Parse JSON
 
 // Rotas da API
 app.use('/api', fightersRoutes);
