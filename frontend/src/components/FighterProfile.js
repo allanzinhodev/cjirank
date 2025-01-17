@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
+import FighterFights from './FighterFights';
 
 function FighterProfile() {
   const { id } = useParams();
   const [fighter, setFighter] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
     fetch(`https://cjirank-production.up.railway.app/api/fighters/${id}`)
       .then(response => response.json())
@@ -69,7 +71,9 @@ function FighterProfile() {
           <Button as={Link} to="/" variant="secondary" className="mt-3">Voltar</Button>
         </Col>
       </Row>
+      <FighterFights fighterId={id} />
     </Container>
+   
   );
   
 }
