@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://cjirank.vercel.app/api/fighters')
+    fetch('https://cjirank-production.up.railway.app/api/fighters')
       .then(response => response.json())
       .then(data => {
         setFighters(data);

@@ -6,7 +6,7 @@ const FighterStatsChart = ({ fighterId }) => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cjirank.vercel.app/api/fighters/${fighterId}/stats`)
+    fetch(`https://cjirank-production.up.railway.app/api/fighters/${fighterId}/stats`)
       .then((res) => res.json())
       .then((data) => setStats(data))
       .catch((error) => console.error('Erro ao buscar estatísticas:', error));

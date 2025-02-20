@@ -5,7 +5,7 @@ const FightRow = ({ fightId }) => {
   const [fight, setFight] = useState(null);
 
   useEffect(() => {
-    fetch(`https://cjirank.vercel.app/api/fights/${fightId}`)
+    fetch(`https://cjirank-production.up.railway.app/api/fights/${fightId}`)
       .then((res) => res.json())
       .then((data) => setFight(data))
       .catch((err) => console.error("Erro ao buscar luta:", err));
