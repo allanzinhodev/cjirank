@@ -10,7 +10,7 @@ const FighterFights = ({ fighterId }) => {
   useEffect(() => {
     const fetchFights = async () => {
       try {
-        const response = await axios.get(`https://cjirank-production.up.railway.app/api/fighters/${fighterId}/fight`);
+        const response = await axios.get(`https://cjirank.vercel.app/api/fighters/${fighterId}/fight`);
         setFights(response.data);
       } catch (err) {
         setError('Erro ao buscar lutas.');

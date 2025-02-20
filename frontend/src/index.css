@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font: normal 500 1rem 'roboto condensed',sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,4 +26,36 @@ code {
 .mt-3 {
   margin-top: 1rem;
   color:white;
+}
+
+.fighter{
+  background-color: #252530;
+  color: white;
+}
+
+.fighter img{
+  background-color: black;
+}
+
+.fighter .atributos{
+  padding-top: 1.5em;
+  border-top: 1px solid #444;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+  gap: 1rem;
+}
+
+.fighter .atributo .titulo{
+  text-transform: uppercase;
+  font-size: 87.5%;
+  color: #aaa;
+}
+
+.fighter .atributo .valor{
+  font-size: 125%;
+}
+
+h1{
+  font-weight: 800;
+  font-size: 3rem;
 }

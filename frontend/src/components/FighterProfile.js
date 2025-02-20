@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
 import FighterFights from './FighterFights';
+import FighterStatsChart from './FighterStatsChart';
 
 function FighterProfile() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function FighterProfile() {
 
   
   useEffect(() => {
-    fetch(`https://cjirank-production.up.railway.app/api/fighters/${id}`)
+    fetch(`http://localhost:3001/api/fighters/${id}`)
       .then(response => response.json())
       .then(data => {
         setFighter(data);
@@ -42,36 +43,43 @@ function FighterProfile() {
 
   return (
     <Container className="mt-5">
-      <Row>
+      <Row className="fighter g-0">
         {/* Coluna da Imagem */}
-        <Col md={4} className="text-center">
+        <Col md={4} className="text-center mg-0">
           <Image
             src={`/fighters/${fighter.id}.png`}
             alt={fighter.name}
             fluid
-            roundedCircle
-            className="mb-4"
           />
-          <h3>{fighter.name}</h3>
-          <p>{fighter.country}</p>
         </Col>
   
         {/* Coluna das Informações */}
-        <Col md={8}>
-          <h4>Informações Gerais</h4>
-          <ul>
-            <li><strong>Idade:</strong> {fighter.age} anos</li>
-            <li><strong>Altura:</strong> {fighter.height} cm</li>
-            <li><strong>Equipe:</strong> {fighter.team}</li>
-          </ul>
-  
-          <h4>Sobre</h4>
-          <p>{fighter.about}</p>
+        <Col md={8} className='g-3 g-xxl-5'>
+          <h1 className='use-letter-spacing-hint my-4'>{fighter.name}</h1>
+          <div className='atributos'>
+            <div className='atributo'>
+              <h5 className='titulo'>team</h5>
+              <div className='valor'>{fighter.team}</div>
+            </div>
+            <div className='atributo'>
+              <h5 className='titulo'>height</h5>
+              <div className='valor'>{fighter.height} CM</div>
+            </div>
+            <div className='atributo'>
+              <h5 className='titulo'>country</h5>
+              <div className='valor'>{fighter.country}</div>
+            </div>
+            <div className='atributo'>
+              <h5 className='titulo'>age</h5>
+              <div className='valor'>{fighter.age} Years</div>
+            </div>
+          </div>
   
           <Button as={Link} to="/" variant="secondary" className="mt-3">Voltar</Button>
         </Col>
       </Row>
       <FighterFights fighterId={id} />
+      <FighterStatsChart fighterId={fighter.id} />
     </Container>
    
   );
