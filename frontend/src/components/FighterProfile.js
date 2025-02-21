@@ -11,7 +11,7 @@ function FighterProfile() {
 
   
   useEffect(() => {
-    fetch(`https://cjirank-production.up.railway.app/api/fighters/${id}`)
+    fetch(`${API_BASE_URL}/fighters/${id}`)
       .then(response => response.json())
       .then(data => {
         setFighter(data);

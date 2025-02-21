@@ -4,13 +4,14 @@ import { Container, Card, Row, Col, Spinner } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import FighterProfile from './components/FighterProfile'; // Página de detalhes do lutador
 import NavigationBar from './components/NavigationBar';
+import API_BASE_URL from './config';
 
 function App() {
   const [fighters, setFighters] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://cjirank-production.up.railway.app/api/fighters')
+    fetch(`${API_BASE_URL}/fighters`)
       .then(response => response.json())
       .then(data => {
         setFighters(data);
