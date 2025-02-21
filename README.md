@@ -12,14 +12,20 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criação do Banco de Dados
 - [x] Criação de requisições para testes
 - [x] Adição e refatoração do `<React Bootstrap>` ao projeto
-- [ ] Implementar Lista de Lutas de lutador
+- [x] Implementar Lista de Lutas de lutador
 - [x] Implementar Header / Footer
-- [ ] Implementar React Social Icons
-- [ ] Disponibilizar Banco de Dados
-- [ ] Criar estatisticas de finalizações
-- [ ] Corrigir e organizar front end
-- [ ] finalizar o Profile Card do Lutador junto
+- [x] Criar estatisticas de finalizações
+- [x] finalizar o Profile Card do Lutador junto
 - [x] Gerar um Deploy de acompanhamento do projeto
+- [x] Implementação de Charts.js
+- [x] Implementação de react-bootstrap
+- [x] WebScrapping de dados usando Puppeteer
+- [ ] Implementar React Social Icons
+- [ ] Implementar pagina inicial com rankings e proximas lutas
+- [ ] Refatorar Lutas no perfil de lutador
+- [ ] Implementar seção de eventos
+- [ ] Disponibilizar banco de dados
+- [ ] Disponibilizar arquivos de Web Scrapping usando Puppetteer
 
 ## 💻 Pré-requisitos
 
